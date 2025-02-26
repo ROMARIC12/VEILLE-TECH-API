@@ -1,66 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>VEILLÉE TECH GROUPE A</title>
+    <title>Veillée Tech : Les API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .code-box {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+    </style>
 </head>
 <body>
+    <header class="text-center py-10">
+        <h1 class="text-4xl font-bold">Veillée Tech : Plongée dans le Monde des API</h1>
+    </header>
+    
+    <main class="max-w-5xl mx-auto p-6 grid gap-8 grid-cols-1 md:grid-cols-2">
+        <section class="glass">
+            <h2 class="text-2xl font-semibold">Pourquoi les API sont essentielles ?</h2>
+            <p class="mt-2">Les API sont le cœur des applications modernes, permettant l'intégration et l'automatisation.</p>
+        </section>
+        
+        <section class="glass">
+            <h2 class="text-2xl font-semibold">Définition et Fonctionnement</h2>
+            <p class="mt-2">Une API permet aux applications de communiquer entre elles via des requêtes structurées.</p>
+        </section>
+        
+        <section class="glass">
+            <h2 class="text-2xl font-semibold">Types d'API</h2>
+            <ul class="mt-2 list-disc pl-5">
+                <li><strong>REST</strong> - HTTP et JSON</li>
+                <li><strong>SOAP</strong> - XML et sécurité avancée</li>
+                <li><strong>GraphQL</strong> - Requêtes optimisées</li>
+                <li><strong>WebSocket</strong> - Temps réel</li>
+            </ul>
+        </section>
+        
+        <section class="glass">
+            <h2 class="text-2xl font-semibold">Sécurité des API</h2>
+            <p class="mt-2">Utilisation de <strong>OAuth2, JWT</strong> et chiffrement HTTPS.</p>
+        </section>
 
-    <main class="box-container">
-        <div class="box">
-            <img src="/image/youtube.jpg" alt="">
-            <h3>HTML 5</h3>
-            <p>APPRENDRE AVEC LES TUTO YOUTUBE</p>
-            <a href="#" class="btn">THEORIE</a>
-        </div>
+        <section class="glass md:col-span-2">
+            <h2 class="text-2xl font-semibold">Comment utiliser et tester une API</h2>
+            <p class="mt-2">Il existe plusieurs logiciels comme Postman, Insomnia, etc.</p>
+        </section>
+        
+        <section class="glass md:col-span-2">
+            <h2 class="text-2xl font-semibold">Exemples Concrets</h2>
+            <p class="mt-2">Des entreprises comme Stripe, Google Maps et Firebase exploitent les API pour leurs services.</p>
+        </section>
+        
+        <section class="glass md:col-span-2">
+            <h2 class="text-2xl font-semibold">Démo : Créer une API avec FastAPI</h2>
+            <div class="code-box text-green-400 font-mono">
+                <pre>
+from fastapi import FastAPI
 
-        <div class="box">
-            <img src="/image/simplon.jpg" alt="">
-            <h3>CSS 3</h3>
-            <p>Passez une formation accelerer avec simplon cote d'ivoire</p>
-            <a href="#" class="btn">ACCELLERE</a>
-        </div>
+app = FastAPI()
 
-        <div class="box">
-            <img src="/image/gpt.png" alt="">
-            <h3>JavaScript</h3>
-            <p>Pour poser des question</p>
-            <a href="#" class="btn">Chat-GPT</a>
-        </div>
-
-        <div class="box">
-            <img src="/image/kan acac.png" alt="">
-            <h3>KHAN ACADEMIE</h3>
-            <p>Club informatique</p>
-            <a href="#" class="btn">Apprendre en groupe</a>
-        </div>
-
-        <div class="box">
-            <img src="/image/over.png" alt="">
-            <p>caumunauté de developpeurs expérimenté </p>
-            <a href="#" class="btn">Poser des question</a>
-        </div>
-
-        <div class="box">
-            <img src="/image/Projet.jpg" alt="">
-            <p>Coder son premier projet en utilisant ce que l'on a apris</p>
-            <a href="#" class="btn">Projet</a>
-        </div>
-
-        <div class="box">
-            <img src="/image/MINDSET.jpg" alt="">
-            <p>se fixer des objectif à atteindre</p>
-            <a href="#" class="btn">Un bon Mindset</a>
-        </div>
-
-        <div class="box">
-            <img src="/image/cycleduprojet.jpg" alt="">
-            <p>Objectif atteint</p>
-            <a href="#" class="btn">Base acquises</a>
-        </div>
+@app.get("/")
+def read_root():
+    return {"message": "Bienvenue sur mon API FastAPI !"}
+                </pre>
+            </div>
+            <p class="mt-2">Lancez avec <code>uvicorn main:app --reload</code> et testez l'API !</p>
+        </section>
     </main>
-
+    
+    <footer class="text-center py-6">
+        <p>© 2025 Veillée Tech - Présenté par le groupe A</p>
+    </footer>
 </body>
 </html>
